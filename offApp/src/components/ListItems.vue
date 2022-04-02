@@ -49,7 +49,7 @@ export default defineComponent({
 
 <style scoped>
 #container {
-  max-width: 40%;
+  max-width: 400px;
   margin: auto;
 }
 
