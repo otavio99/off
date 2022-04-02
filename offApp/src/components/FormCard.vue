@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import { IonCard, IonCardContent, IonCardHeader, IonCardTitle } from '@ionic/vue';
+import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonButton, IonLabel } from '@ionic/vue';
 import { pin, walk, warning, wifi, wine } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  components: { IonCard, IonCardContent, IonCardHeader, IonCardTitle },
+  components: { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonButton, IonLabel },
   setup() {
     return { warning };
   }
