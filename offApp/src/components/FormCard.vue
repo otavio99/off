@@ -1,10 +1,6 @@
 <template>
   <div id="container">
     <ion-card>
-      <ion-card-header>
-        <ion-card-title>Adicionar</ion-card-title>
-      </ion-card-header>
-
       <ion-card-content>
         <ion-item>
           <ion-label>Nome:</ion-label>
@@ -17,12 +13,12 @@
 </template>
 
 <script>
-import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonButton, IonLabel } from '@ionic/vue';
+import { IonCard, IonCardContent, IonInput, IonButton, IonLabel } from '@ionic/vue';
 import { pin, walk, warning, wifi, wine } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  components: { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonButton, IonLabel },
+  components: { IonCard, IonCardContent, IonInput, IonButton, IonLabel },
   setup() {
     return { warning };
   }

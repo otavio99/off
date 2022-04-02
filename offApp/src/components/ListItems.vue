@@ -2,10 +2,6 @@
   <!-- List of Text Items -->
   <div id="container">
     <ion-card>
-      <ion-card-header>
-        <ion-card-title>Lista</ion-card-title>
-      </ion-card-header>
-
       <ion-card-content>
         <ion-list>
           <ion-item>

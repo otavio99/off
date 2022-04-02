@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-content :fullscreen="true">
-      <HeaderPage name="Tab 1 page" />
+      <HeaderPage name="Cadastro" />
       <FormCard />
       <ExploreContainer name="Tab 1 page" />
     </ion-content>
