@@ -3,6 +3,8 @@
     <ion-content :fullscreen="true">
       <HeaderPage name="Tab 1 page" />
 
+      <ListItems />
+
       <ExploreContainer name="Tab 2 page" />
     </ion-content>
   </ion-page>
@@ -12,9 +14,10 @@
 import { defineComponent } from 'vue';
 import { IonPage, IonContent } from '@ionic/vue';
 import HeaderPage from '@/components/HeaderPage.vue';
+import ListItems from '@/components/ListItems.vue';
 
 export default defineComponent({
   name: 'Tab2Page',
-  components: { HeaderPage, IonContent, IonPage }
+  components: { HeaderPage, IonContent, IonPage, ListItems }
 });
 </script>
