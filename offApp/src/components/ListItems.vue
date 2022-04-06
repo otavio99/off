@@ -6,19 +6,17 @@
         <ion-list>
           <ion-item>
             <ion-label>Pokémon Yellow</ion-label>
+            <ion-button color="success" class="edit-btn">
+              <ion-icon :icon="eyeOutline" />
+            </ion-button>
+            <ion-button class="edit-btn">
+              <ion-icon :icon="createOutline" />
+            </ion-button>
+            <ion-button color="danger" >
+              <ion-icon :icon="trashOutline" />
+            </ion-button>
           </ion-item>
-          <ion-item>
-            <ion-label>Mega Man X</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>The Legend of Zelda</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>Pac-Man</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>Super Mario World</ion-label>
-          </ion-item>
+
         </ion-list>
       </ion-card-content>
     </ion-card>
@@ -32,6 +30,8 @@ import {
   IonLabel
 } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import { createOutline, trashOutline, eyeOutline } from 'ionicons/icons';
+
 
 export default defineComponent({
   name: 'ListItems',
@@ -39,6 +39,13 @@ export default defineComponent({
     IonItem,
     IonList,
     IonLabel
+  },
+  setup() {
+    return {
+      createOutline,
+      trashOutline,
+      eyeOutline
+    }
   }
 });
 </script>
@@ -52,5 +59,9 @@ export default defineComponent({
 #btnSalvar {
   float: right;
   margin: 7px;
+}
+
+.edit-btn{
+  margin-right: 16px;
 }
 </style>
