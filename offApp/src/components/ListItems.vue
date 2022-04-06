@@ -4,19 +4,20 @@
     <ion-card>
       <ion-card-content>
         <ion-list>
-          <ion-item>
-            <ion-label>Pokémon Yellow</ion-label>
-            <ion-button color="success" class="edit-btn">
-              <ion-icon :icon="eyeOutline" />
-            </ion-button>
-            <ion-button class="edit-btn">
-              <ion-icon :icon="createOutline" />
-            </ion-button>
-            <ion-button color="danger" >
-              <ion-icon :icon="trashOutline" />
-            </ion-button>
-          </ion-item>
-
+          <div v-for="item in getItems" :key="item.id">
+            <ion-item>
+              <ion-label>{{item.name}}</ion-label>
+              <ion-button color="success" class="edit-btn">
+                <ion-icon :icon="eyeOutline" />
+              </ion-button>
+              <ion-button class="edit-btn">
+                <ion-icon :icon="createOutline" />
+              </ion-button>
+              <ion-button color="danger" >
+                <ion-icon :icon="trashOutline" />
+              </ion-button>
+            </ion-item>
+          </div>
         </ion-list>
       </ion-card-content>
     </ion-card>
@@ -45,6 +46,11 @@ export default defineComponent({
       createOutline,
       trashOutline,
       eyeOutline
+    }
+  },
+  computed: {
+    getItems () {
+      return this.$store.state.items;
     }
   }
 });

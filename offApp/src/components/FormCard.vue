@@ -2,11 +2,17 @@
   <div id="container">
     <ion-card>
       <ion-card-content>
+
         <ion-item>
           <ion-label>Nome:</ion-label>
-          <ion-input placeholder="Ex: Boku no ****"></ion-input>
+          <ion-input v-model="item.name" placeholder="Ex: Boku no ****"></ion-input>
         </ion-item>
-        <ion-button color="success" id="btnSalvar">Salvar</ion-button>
+        <ion-item>
+          <ion-label>Avaliação (0-10):</ion-label>
+          <ion-input v-model="item.rate"></ion-input>
+        </ion-item>
+
+        <ion-button type="button" @click="submit" color="success" id="btnSalvar">Salvar</ion-button>
       </ion-card-content>
     </ion-card>
   </div>
@@ -19,8 +25,23 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   components: { IonCard, IonCardContent, IonInput, IonButton, IonLabel },
+  data () {
+    return {
+      item: {
+        id: null,
+        name: "",
+        rate: 0
+      }
+    }
+  },
   setup() {
     return { warning };
+  },
+  methods: {
+    submit() {
+      console.log("testttt")
+      this.$store.commit({type: 'setItem',item: {id: this.item.id, name: this.item.name, rate: this.item.rate}})
+    }
   }
 });
 </script>
