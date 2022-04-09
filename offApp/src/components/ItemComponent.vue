@@ -7,7 +7,7 @@
     <ion-button class="edit-btn">
       <ion-icon :icon="createOutline" />
     </ion-button>
-    <ion-button color="danger" >
+    <ion-button @click="deleteItem" color="danger" >
       <ion-icon :icon="trashOutline" />
     </ion-button>
   </ion-item>
@@ -34,6 +34,11 @@ export default defineComponent({
       createOutline,
       trashOutline,
       eyeOutline
+    }
+  },
+  methods: {
+    deleteItem(){
+      this.$store.commit({type: 'deleteItem',item: {id: this.item.id}})
     }
   }
 });
