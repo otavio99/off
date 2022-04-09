@@ -22,13 +22,13 @@
 import { IonCard, IonCardContent, IonInput, IonButton, IonLabel } from '@ionic/vue';
 import { pin, walk, warning, wifi, wine } from 'ionicons/icons';
 import { defineComponent } from 'vue';
+import { uuid } from 'vue-uuid';
 
 export default defineComponent({
   components: { IonCard, IonCardContent, IonInput, IonButton, IonLabel },
   data () {
     return {
       item: {
-        id: null,
         name: "",
         rate: 0
       }
@@ -39,8 +39,7 @@ export default defineComponent({
   },
   methods: {
     submit() {
-      console.log("testttt")
-      this.$store.commit({type: 'setItem',item: {id: this.item.id, name: this.item.name, rate: this.item.rate}})
+      this.$store.commit({type: 'setItem', item: {id: this.$uuid.v4(), name: this.item.name, rate: this.item.rate}})
     }
   }
 });

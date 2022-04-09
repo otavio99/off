@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
+import withUUID from "vue-uuid";
 
 import { IonicVue } from '@ionic/vue';
 
@@ -25,9 +26,11 @@ import './theme/variables.css';
 
 import store from './store'
 
-const app = createApp(App).use(store)
+const app = withUUID(
+  createApp(App).use(store)
   .use(IonicVue)
-  .use(router);
+  .use(router)
+);
 
 router.isReady().then(() => {
   app.mount('#app');
