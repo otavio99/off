@@ -1,43 +1,39 @@
 <template>
-  <!-- List of Text Items -->
-  <div id="container">
-    <ion-card>
-      <ion-card-content>
-        <ion-list>
-          <div v-for="item in getItems" :key="item.id">
-            <ItemComponent :item="item"/>
-          </div>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-  </div>
+  <ion-item>
+    <ion-label>{{item.name}}</ion-label>
+    <ion-button color="success" class="edit-btn">
+      <ion-icon :icon="eyeOutline" />
+    </ion-button>
+    <ion-button class="edit-btn">
+      <ion-icon :icon="createOutline" />
+    </ion-button>
+    <ion-button color="danger" >
+      <ion-icon :icon="trashOutline" />
+    </ion-button>
+  </ion-item>
 </template>
 
 <script lang="ts">
 import {
-  IonList,
+  IonItem,
+  IonLabel
 } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import { createOutline, trashOutline, eyeOutline } from 'ionicons/icons';
-import ItemComponent from './ItemComponent.vue'
 
 
 export default defineComponent({
-  name: 'ListItems',
+  name: 'ItemComponent',
+  props: ['item'],
   components: {
-    IonList,
-    ItemComponent
+    IonItem,
+    IonLabel
   },
   setup() {
     return {
       createOutline,
       trashOutline,
       eyeOutline
-    }
-  },
-  computed: {
-    getItems () {
-      return this.$store.state.items;
     }
   }
 });
