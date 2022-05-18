@@ -1,7 +1,7 @@
 <template>
   <ion-item>
     <ion-label>{{item.name}}</ion-label>
-    <ion-button router-link="/view-item/id" color="success" class="edit-btn">
+    <ion-button :router-link="url" color="success" class="edit-btn">
       <ion-icon :icon="eyeOutline" />
     </ion-button>
     <ion-button class="edit-btn">
@@ -20,6 +20,7 @@ import {
 } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import { createOutline, trashOutline, eyeOutline } from 'ionicons/icons';
+import { IonButton } from '@ionic/vue';
 
 
 export default defineComponent({
@@ -28,6 +29,12 @@ export default defineComponent({
   components: {
     IonItem,
     IonLabel,
+    IonButton,
+  },
+  data () {
+    return {
+      url: "/view-item/" + this.item.id
+    }
   },
   setup() {
     return {
