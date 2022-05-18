@@ -1,16 +1,16 @@
 <template>
-  <ion-item>
-    <ion-label>{{item.name}}</ion-label>
-    <ion-button router-link="/view-item/id" color="success" class="edit-btn">
-      <ion-icon :icon="eyeOutline" />
-    </ion-button>
-    <ion-button class="edit-btn">
-      <ion-icon :icon="createOutline" />
-    </ion-button>
-    <ion-button @click="deleteItem" color="danger" >
-      <ion-icon :icon="trashOutline" />
-    </ion-button>
-  </ion-item>
+  <div id="container">
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Nome: {{item.id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Avaliação (0-10):</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </template>
 
 <script lang="ts">
@@ -18,16 +18,19 @@ import {
   IonItem,
   IonLabel
 } from '@ionic/vue';
+import { IonCard, IonCardContent, IonButton } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import { createOutline, trashOutline, eyeOutline } from 'ionicons/icons';
 
 
 export default defineComponent({
-  name: 'ItemComponent',
+  name: 'ItemView',
   props: ['item'],
   components: {
     IonItem,
     IonLabel,
+    IonCard,
+    IonCardContent
   },
   setup() {
     return {

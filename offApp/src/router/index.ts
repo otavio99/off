@@ -22,8 +22,12 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'tab2',
         component: () => import('@/views/Tab2Page.vue')
-      }
+      },
     ]
+  },
+  {
+    path: '/view-item/:id',
+    component: () => import('@/views/ViewItemPage.vue')
   }
 ]
 
