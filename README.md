@@ -12,3 +12,4 @@
 
 ### Resources
 - Ionic 6 doc: https://ionicframework.com/docs/vue/quickstart
+- Vuex: https://vuex.vuejs.org/
