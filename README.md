@@ -9,3 +9,6 @@
 - ionic cli 6.19.0
 - @vue/cli 5.0.4
 - ionic 6 & vuejs 3
+
+### Resources
+- Ionic 6 doc: https://ionicframework.com/docs/vue/quickstart
