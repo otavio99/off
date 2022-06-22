@@ -12,6 +12,9 @@ export default createStore({
   getters: {
     getItems (state) {
       return state.items
+    },
+    getItem: (state) => (id: any) => {
+      return state.items.find((item: any) => item.id === id);
     }
   },
   mutations: {
@@ -20,11 +23,6 @@ export default createStore({
     },
     deleteItem (state, payload) {
       state.items = state.items.filter(item => item.id !== payload.item.id)
-      console.log(state.items)
     }
-  },
-  actions: {
-  },
-  modules: {
   }
 })

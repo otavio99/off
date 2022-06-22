@@ -1,10 +1,10 @@
 <template>
   <ion-item>
     <ion-label>{{item.name}}</ion-label>
-    <ion-button :router-link="url" color="success" class="edit-btn">
+    <ion-button :router-link="viewItemUrl" color="success" class="edit-btn">
       <ion-icon :icon="eyeOutline" />
     </ion-button>
-    <ion-button class="edit-btn">
+    <ion-button :router-link="updateItemUrl" class="edit-btn">
       <ion-icon :icon="createOutline" />
     </ion-button>
     <ion-button @click="deleteItem" color="danger" >
@@ -33,7 +33,8 @@ export default defineComponent({
   },
   data () {
     return {
-      url: "/view-item/" + this.item.id
+      viewItemUrl: "/view-item/" + this.item.id,
+      updateItemUrl: "/update-item/" + this.item.id
     }
   },
   setup() {

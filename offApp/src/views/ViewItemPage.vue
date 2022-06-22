@@ -2,7 +2,9 @@
   <ion-page>
     <ion-content :fullscreen="true">
       <HeaderPage name="Filme" />
-      The current id of the item is {{ id }}
+      <div id="container">
+        The current id of the item is {{ id }}
+      </div>
     </ion-content>
   </ion-page>
 </template>
@@ -23,3 +25,16 @@ export default  defineComponent({
   components: { HeaderPage, IonContent, IonPage }
 });
 </script>
+
+<style scoped>
+#container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#btnSalvar {
+  float: right;
+  margin: 7px;
+}
+</style>

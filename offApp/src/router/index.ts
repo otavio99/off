@@ -28,6 +28,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/view-item/:id',
     component: () => import('@/views/ViewItemPage.vue')
+  },
+  {
+    path: '/update-item/:id',
+    component: () => import('@/views/UpdateItemPage.vue')
   }
 ]
 
